@@ -1,7 +1,13 @@
-export function Header(){
+import './header.css'
+
+interface HeaderPromp{
+    title: string
+}
+
+export function Header({title}: HeaderPromp){
     return(
-        <header>
-            <h1>React + TypeScript</h1>
+        <header className='header'>
+            <h1 className='title'>{title}</h1>
         </header>
     )
 }
