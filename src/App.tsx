@@ -1,16 +1,28 @@
-import { Header } from './components/header'
-import { Funcionario } from './components/funcionario'
-import Footer from './components/footer'
+import { useState } from 'react'
 import './App.css'
 
 export default function App(){
+  const [input, setInput] = useState('')
+  const [idade, setIdade] = useState('')
+
+  function mostraAl(){
+    console.log(input)
+  }
+
   return(
     <div>
-      <Header title='Title to header'/>
-      <Funcionario nome='Andre Young' idade={33}/>
-      <Funcionario nome='Andre Felipe' idade={61}/>
-      <Funcionario nome='Professor Andre' idade={27}/>
-      <Footer/>
+      <h1> use state</h1>
+
+      <input placeholder='digite o nome ' 
+      value={input} 
+      onChange={(e)=>setInput(e.target.value)}/>
+
+      <input placeholder='digite o nome ' 
+      value={idade} 
+      onChange={(e)=>setIdade(e.target.value)}/>
+
+      <br/>
+      <button onClick={mostraAl}>Mostrar aluno</button>
     </div>
   )
 }
